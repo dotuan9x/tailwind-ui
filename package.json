@@ -23,7 +23,6 @@
     "autoprefixer": "^10.2.6",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.1.0",
-    "brotli-webpack-plugin": "^1.1.0",
     "clean-webpack-plugin": "4.0.0-alpha.0",
     "css-loader": "5.2.6",
     "eslint": "7.28.0",
@@ -63,7 +62,7 @@
   },
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "node --max_old_space_size=4096 ./node_modules/webpack/bin/webpack --config config/webpack.build.js",
+    "build": "node --max_old_space_size=4096 ./node_modules/webpack/bin/webpack --config webpack.build.js",
     "test": "jest --config=jest.config.json"
   }
 }

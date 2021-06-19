@@ -21,7 +21,6 @@ module.exports = {
             Assets: paths.appSrc + '/assets/',
             Components: paths.appSrc + '/components/',
             Modules: paths.appSrc + '/modules/',
-            Services: paths.appSrc + '/services/'
         }
     },
     module: {
