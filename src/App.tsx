@@ -7,7 +7,7 @@ import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import store from './store';
 
 // Pages
-import Components from 'Modules/components';
+import Components from 'Modules/container/components';
 
 import 'tailwindcss/tailwind.css';
 

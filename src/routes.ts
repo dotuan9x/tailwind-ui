@@ -1,4 +1,4 @@
-import form from 'Src/routes/form';
+import components from 'Src/routes/components';
 
 export interface routeType {
     component: any,
@@ -7,7 +7,7 @@ export interface routeType {
 }
 
 let routes: Array<routeType> = [
-    ...form
+    ...components
 ];
 
 // Convert nested routes to simple routes
