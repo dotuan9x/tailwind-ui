@@ -1,7 +1,7 @@
 // Libraries
 import React from 'react';
 
-function Button() {
+const Button = () => {
     return (
         <>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 justify-items-center">

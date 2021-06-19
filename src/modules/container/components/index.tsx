@@ -1,11 +1,17 @@
 // Libraries
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 
 import PrimaryButton from "Components/button/primary";
 import Breadcrumb from "Components/breadcrumb/default";
 import Preview from "Modules/components/preview"
 
+// Utils
+import {formatHtml} from "Src/utils";
+
 function Components() {
+    // console.log('a', formatHtml(ReactDOMServer.renderToStaticMarkup(<PrimaryButton />)))
+
     return (
         <div className="relative bg-white">
             <div className="ring-0 w-full bg-white mx-auto px-4 sm:px-6 border-b-2 border-gray-100 z-50">
@@ -65,9 +71,9 @@ function Components() {
                     </section>
 
                     <section className="mt-10">
-                        <Preview>
+                        {/*<Preview>
                             <PrimaryButton/>
-                        </Preview>
+                        </Preview>*/}
                     </section>
                 </div>
             </div>
