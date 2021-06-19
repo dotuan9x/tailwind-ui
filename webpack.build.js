@@ -7,7 +7,7 @@ const version = moment().tz('Asia/Ho_Chi_Minh').format('MMDDHHmm');
 const outputFileName = `${version}/js/[name].bundle.js`;
 const outputChunkFileName = `${version}/js/[name].js`;
 
-const publicPath = 'https://dotuan9x.github.io/taildwind-ui/';
+const publicPath = 'https://dotuan9x.github.io/tailwind-ui/';
 
 module.exports = {
     devtool: false,
