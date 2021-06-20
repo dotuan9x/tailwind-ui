@@ -4,7 +4,7 @@ const paths = require('./config/paths');
 const publicPath = '/';
 
 module.exports = {
-    devtool: 'cheap-module-source-map',
+    devtool: 'inline-source-map',
     mode: 'development',
     entry: ['@babel/polyfill', paths.appIndexTsx],
     output: {
@@ -20,7 +20,7 @@ module.exports = {
             Src: paths.appSrc,
             Assets: paths.appSrc + '/assets/',
             Components: paths.appSrc + '/components/',
-            Modules: paths.appSrc + '/modules/',
+            Modules: paths.appSrc + '/modules/'
         }
     },
     module: {
@@ -152,7 +152,7 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            PRODUCTION: JSON.stringify(false),
+            PRODUCTION: JSON.stringify(false)
         }),
         new HTMLWebpackPlugin({
             template: paths.appPublic + '/index.html',

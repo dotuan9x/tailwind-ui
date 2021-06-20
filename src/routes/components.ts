@@ -9,7 +9,12 @@ export default [
         exact: true,
         component: Components,
         resources: [
-
+            {
+                state: 'component',
+                path: '/components/:component',
+                exact: true,
+                component: Components
+            }
         ]
     }
 ];
