@@ -1,5 +1,4 @@
 const moment = require('moment-timezone');
-const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./config/paths');
 
@@ -25,7 +24,7 @@ module.exports = {
             Src: paths.appSrc,
             Assets: paths.appSrc + '/assets/',
             Components: paths.appSrc + '/components/',
-            Modules: paths.appSrc + '/modules/',
+            Modules: paths.appSrc + '/modules/'
         }
     },
     module: {
@@ -164,9 +163,6 @@ module.exports = {
             template: `${paths.appPublic}/index.html`,
             filename: `${version}/index.html`,
             chunksSortMode: 'none'
-        }),
-        new webpack.SourceMapDevToolPlugin({
-            filename: `${version}/sourcemaps/[name].map`
         })
     ]
 };

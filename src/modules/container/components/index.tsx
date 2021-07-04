@@ -1,25 +1,47 @@
 // Libraries
-import React, {Fragment, useEffect} from 'react';
-// import ReactDOMServer from 'react-dom/server';
-import {useParams, useHistory} from 'react-router-dom';
+import React, {Fragment, useState, useEffect} from 'react';
+import {useParams, useHistory, useLocation} from 'react-router-dom';
 import {get} from 'lodash';
 
-import Breadcrumb from 'Components/breadcrumb/default';
+import Breadcrumb, {IBreadcrumb} from 'Components/breadcrumb/default';
 
 // Utils
 import {components} from 'Modules/container/components/constant';
-// import {formatHtml} from 'Src/utils';
 
 const Components = () => {
-    // console.log('a', formatHtml(ReactDOMServer.renderToStaticMarkup(<PrimaryButton />)))
     const route = useParams<{id?: string}>();
     const history = useHistory();
+    const location = useLocation();
+    const [component, setComponent] = useState<Record<string, any>>({});
+    const [breadcrumbs, setBreadcrumbs] = useState<IBreadcrumb[]>([]);
 
     useEffect(() => {
         if (!get(route, 'component')) {
             history.push('/components/overview');
+        } else {
+            getComponentActive(components);
         }
-    }, []);
+    }, [location]);
+    
+    useEffect(() => {
+        const arrBreadcrumbs = [
+            {
+                name: 'overview',
+                label: 'Application UI',
+                path: '/'
+            }
+        ];
+        
+        if (component.label && component.name) {
+            arrBreadcrumbs.push({
+                name: component.name,
+                label: component.label,
+                path: `/components/${component.name}`
+            });
+
+            setBreadcrumbs(arrBreadcrumbs);
+        }
+    }, [component]);
 
     const renderSidebarMenu = (components) => {
         return components.map((component) => {
@@ -50,7 +72,7 @@ const Components = () => {
         });
     };
 
-    const renderComponent = (components) => {
+    const getComponentActive = (components) => {
         const component = get(route, 'component');
 
         if (component && components.length) {
@@ -65,9 +87,9 @@ const Components = () => {
             });
 
             if (comp && comp.component) {
-                return <comp.component />;
+                setComponent(comp);
             } else {
-                return <>Not found component</>;
+                setComponent({});
             }
         }
     };
@@ -97,9 +119,9 @@ const Components = () => {
                     </div>
                 </div>
                 <div className="w-full p-10 container">
-                    <Breadcrumb />
+                    <Breadcrumb title={component.label} breadcrumbs={breadcrumbs} />
 
-                    {renderComponent(components)}
+                    {component.component ? <component.component /> : <>Not found component</>}
                 </div>
             </div>
         </div>
