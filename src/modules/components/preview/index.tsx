@@ -52,7 +52,7 @@ const Preview: React.FC<PreviewProps> = ({
     };
 
     return (
-        <div>
+        <div className="max-w-screen-lg">
             <header className="flex flex-wrap md:flex-nowrap justify-between mb-3 py-1.5 whitespace-nowrap">
                 <div className="min-w-0 flex items-center">
                     <h2 className="font-medium text-gray-900 truncate">

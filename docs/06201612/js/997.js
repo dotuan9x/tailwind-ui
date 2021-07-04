@@ -1,2 +1,0 @@
-(self.webpackChunktailwind_ui=self.webpackChunktailwind_ui||[]).push([[997],{2854:(e,i,a)=>{"use strict";a.r(i),a.d(i,{default:()=>l});var t=a(7294);const l=()=>t.createElement("div",{className:"relative bg-white"},"Overview")}}]);
-//# sourceMappingURL=../sourcemaps/997.map

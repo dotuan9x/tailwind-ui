@@ -25,6 +25,15 @@ export const components = [
                 })
             },
             {
+                name: 'input',
+                label: 'Input',
+                type: 'component',
+                component: Loadable({
+                    loader: () => import('Components/input'),
+                    loading: () => {return null}
+                })
+            },
+            {
                 name: 'icon',
                 label: 'Icon',
                 type: 'component',

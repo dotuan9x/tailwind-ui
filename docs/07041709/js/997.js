@@ -1,0 +1,1 @@
+(self.webpackChunktailwind_ui=self.webpackChunktailwind_ui||[]).push([[997],{16997:(e,i,a)=>{"use strict";a.r(i),a.d(i,{default:()=>l});var t=a(67294);const l=()=>t.createElement("div",{className:"relative bg-white"},"Overview")}}]);
