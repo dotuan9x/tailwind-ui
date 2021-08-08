@@ -34,6 +34,15 @@ export const components = [
                 })
             },
             {
+                name: 'select',
+                label: 'Select',
+                type: 'component',
+                component: Loadable({
+                    loader: () => import('Components/select'),
+                    loading: () => {return null}
+                })
+            },
+            {
                 name: 'icon',
                 label: 'Icon',
                 type: 'component',
