@@ -1,1 +1,0 @@
-(self.webpackChunktailwind_ui=self.webpackChunktailwind_ui||[]).push([[207],{34207:(e,t,a)=>{"use strict";a.r(t),a.d(t,{default:()=>l});var n=a(67294);const l=()=>n.createElement(n.Fragment,null,n.createElement("section",{className:"mt-10"},"Icon"))}}]);
